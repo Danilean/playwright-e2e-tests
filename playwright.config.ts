@@ -5,10 +5,10 @@ export default defineConfig({
   timeout: 120000,
   retries: 0,
   use: {
-    baseURL: 'https://demo.opencart.com/', // Certifique-se de que isso está presente
+    baseURL: 'https://demo.opencart.com/',
     trace: 'on',
     locale: 'pt-BR',
-    headless: false,
+    headless: true,
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
     screenshot: 'on',

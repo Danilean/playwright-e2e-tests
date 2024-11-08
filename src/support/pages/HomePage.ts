@@ -11,14 +11,12 @@ export default class HomePage {
   }
 
   async goto() {
-    // Navega até a URL base configurada no playwright.config.ts
     await this.page.goto('/');
-    // Espera explícita para garantir que todos os recursos da página sejam carregados
     await this.page.waitForLoadState('load');
   }
 
   async validateHomePageLoaded() {
-    // Valida se a barra de pesquisa está presente como indicação de que a página inicial foi carregada
+
     await this.searchBar.waitForSearchBarToBeVisible();
   }
 }

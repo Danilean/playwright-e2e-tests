@@ -11,7 +11,6 @@ test.describe('Search Product', () => {
     const productName = 'MacBook';
     await homePage.searchBar.searchProduct(productName);
 
-    // Espera o primeiro produto carregar
     const firstProduct = page.locator('.product-layout .caption h4 a').first();
     await firstProduct.waitFor({ state: 'visible' });
     await expect(firstProduct).toHaveText(productName);
