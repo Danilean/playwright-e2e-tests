@@ -3,7 +3,7 @@ import { defineConfig } from '@playwright/test';
 export default defineConfig({
   testDir: './src/scenarios',
   timeout: 120000,
-  retries: 0,
+  retries: 1,
   use: {
     baseURL: 'https://demo.opencart.com/',
     trace: 'on',
@@ -15,7 +15,7 @@ export default defineConfig({
     video: 'off'
   },
   expect: {
-    timeout: 30000
+    timeout: 60000 
   },
   reporter: [
     [

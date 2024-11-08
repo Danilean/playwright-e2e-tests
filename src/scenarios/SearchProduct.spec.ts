@@ -10,7 +10,10 @@ test.describe('Search Product', () => {
 
     const productName = 'MacBook';
     await homePage.searchBar.searchProduct(productName);
+    console.log(`Produto "${productName}" pesquisado.`);
 
+    await page.waitForSelector('.product-layout .caption h4 a', { state: 'visible' });
+    
     const firstProduct = page.locator('.product-layout .caption h4 a').first();
     await expect(firstProduct).toHaveText(productName);
   });
