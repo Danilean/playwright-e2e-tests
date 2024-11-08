@@ -1,0 +1,24 @@
+name: Build and Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:   
+    - cron: '0 12 * * *'
+
+jobs:
+  build:
+    name: Run E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 21
+      uses: actions/setup-node@v2
+      with:
+        node-version: 21
+        cache: 'npm'
+    - run: npm install 
+    - run: npx playwright install      
+    - run: npm run actions
