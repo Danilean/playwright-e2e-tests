@@ -12,7 +12,6 @@ test.describe('Search Product', () => {
     await homePage.searchBar.searchProduct(productName);
 
     const firstProduct = page.locator('.product-layout .caption h4 a').first();
-    await firstProduct.waitFor({ state: 'visible' });
     await expect(firstProduct).toHaveText(productName);
   });
 });
