@@ -8,7 +8,7 @@ export default defineConfig({
     baseURL: 'https://demo.opencart.com/',
     trace: 'on',
     locale: 'pt-BR',
-    headless: true,
+    headless: false,
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
     screenshot: 'on',

@@ -12,11 +12,10 @@ export default class HomePage {
 
   async goto() {
     await this.page.goto('/');
-    await this.page.waitForLoadState('load');
+    await this.page.waitForLoadState('domcontentloaded');
   }
 
   async validateHomePageLoaded() {
-
     await this.searchBar.waitForSearchBarToBeVisible();
   }
 }
